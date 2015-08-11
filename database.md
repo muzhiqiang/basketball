@@ -117,6 +117,7 @@ userId | Pointer | 是 | 用户指针
 content | String | 是 | 评论内容，不为空
 likes | Number<计数器> | 是 | 赞数，默认为 0
 competitionId | Pointer | 是 | 比赛指针
+atUser | Pointer | 否 | 被 @ 的用户
 
 ### CommentLike
 
