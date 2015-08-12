@@ -43,7 +43,7 @@ award | Number | 是 | 奖金池，默认为 0
 awardLimit | Number | 是 | 奖金池上限，0 代表无奖金池
 teams | Relation<Team> | 是 | 球队指针数组，默认为空
 college | String | 是 | 学院名
-isFinished | Bool | 是 | 是否结束，默认 false
+status | String | 是 | 是否结束，默认 false
 follows | Number<计数器> | 是 | 关注人数，默认 0
 
 ### GameFollow
