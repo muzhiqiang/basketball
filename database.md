@@ -74,6 +74,17 @@ scoreId | Pointer | 是 | 分数指针
 statics | String | 否 | 统计
 level | Number | 是 | 比赛层级
 type | String | 是 | 比赛类型 "小组赛" "A小组" "1/8 决赛" "1/4 决赛" "半决赛" "总决赛"
+likesA | Number | 是 | 球队A关注人数，默认为0
+likesB | Number | 是 | 球队B关注人数，默认为0
+
+### TeamFollow
+
+字段 | 类型 | 必填 | 说明
+:--- | :---: | :---: | :---:
+objectId | String | 是 | 主键
+userId | Pointer | 是 | 用户指针
+competitionId | Pointer | 是 | 比赛指针
+team | Number | 是 | 队伍,1代表A队,2代表B队
 
 ### Score
 
