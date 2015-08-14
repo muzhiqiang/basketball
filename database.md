@@ -76,6 +76,7 @@ level | Number | 是 | 比赛层级
 type | String | 是 | 比赛类型 "小组赛" "A小组" "1/8 决赛" "1/4 决赛" "半决赛" "总决赛"
 likesA | Number | 是 | 球队A关注人数，默认为0
 likesB | Number | 是 | 球队B关注人数，默认为0
+isLived | Bool | 是 | 代表比赛是否会做直播
 
 ### TeamFollow
 
