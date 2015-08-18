@@ -45,6 +45,7 @@ teams | Relation<Team> | 是 | 球队指针数组，默认为空
 college | String | 是 | 学院名
 isFinished | Bool | 是 | 是否结束，默认 false
 follows | Number<计数器> | 是 | 关注人数，默认 0
+coverUrl | String | 是 | 赛事海报封面
 
 ### GameFollow
 
