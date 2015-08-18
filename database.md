@@ -70,6 +70,7 @@ gameId | Pointer | 是 | 赛事指针
 reportId | Pointer | 否 | 战况指针
 status | String | 是 | "未开始" "进行中" "已完赛"
 award | Number | 是 | 奖金池，默认为 0
+awardMinimum | Number | 是 | 奖金池下限
 awardLimit | Number | 是 | 奖金池上线，0 代表无奖金池
 scoreId | Pointer | 是 | 分数指针
 statics | String | 否 | 统计
@@ -79,6 +80,13 @@ likesA | Number | 是 | 球队A关注人数，默认为0
 likesB | Number | 是 | 球队B关注人数，默认为0
 isLived | Bool | 是 | 代表比赛是否会做直播
 beginTime | Date | 否 | 比赛开始时间
+
+### CompetitionShare
+字段 | 类型 | 必填 | 说明
+:--- | :---: | :---: | :---:
+objectId | String | 是 | 主键
+competitionId | Pointer | 是 | 比赛指针
+userId | Pointer | 是 | 用户指针
 
 ### TeamFollow
 
