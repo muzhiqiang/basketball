@@ -96,7 +96,7 @@ userId | Pointer | 是 | 用户指针
 objectId | String | 是 | 主键
 userId | Pointer | 是 | 用户指针
 competitionId | Pointer | 是 | 比赛指针
-team | Number | 是 | 队伍,1代表A队,2代表B队
+team | Number | 是 | 队伍,1代表A队,2代表B队，0 代表曾经支持过某对，后来取消了支持
 
 ### Score
 
