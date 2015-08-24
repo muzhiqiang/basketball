@@ -47,6 +47,7 @@ isFinished | Bool | 是 | 是否结束，默认 false
 follows | Number<计数器> | 是 | 关注人数，默认 0
 coverUrl | String | 是 | 赛事海报封面
 type | String | 是 | "小组赛" "淘汰赛" "半决赛"  
+views | Numer | 是 | 浏览量，计数器
 
 ### GameFollow
 
@@ -81,6 +82,7 @@ likesA | Number | 是 | 球队A关注人数，默认为0
 likesB | Number | 是 | 球队B关注人数，默认为0
 isLived | Bool | 是 | 代表比赛是否会做直播
 beginTime | Date | 否 | 比赛开始时间
+views | Numer | 是 | 浏览量，计数器
 
 ### CompetitionShare
 字段 | 类型 | 必填 | 说明
