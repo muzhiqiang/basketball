@@ -130,6 +130,7 @@ info | String | 是 | 球队简介，默认空
 objectId | String | 是 | 主键
 title | String | 是 | 标题
 content | String | 是 | 内容
+author | String | 是 | 作者
 
 ### Comment
 
