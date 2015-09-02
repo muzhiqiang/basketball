@@ -1,7 +1,7 @@
 # 数据库文档
 
 * v 1.0.0
-* @sidong
+* @empty
 
 ---
 
@@ -12,117 +12,61 @@
 字段 | 类型 | 必填 | 说明
 :--- | :---: | :---: | :---:
 objectId | String | 是 | 主键
-wechatId | String | 否 | 微信 openid
-nickname | String | 是 | 昵称，不能为空，长度 1 ~ 20 个字符
-avatorUrl | String | 是 | 头像 url
-gender | Number | 是 | 0 代表未知，1 代表男性，2 代表女性，默认为 0
-mobilePhoneNumber | String | 否 | 手机号
-username | String | 是 | 用户名，微信登录用户同 openid
-password | String | 是 | 密码，未绑定手机微信登录用户同 openid
+ID | String | 否 | 身份证号码，完善资料时必填
+name | String | 否 | 真实姓名，完善资料时必填
+avatorUrl | String | 否 | 头像 url
+email | String | 是 | 邮箱
+mobilePhoneNumber | String | 否 | 手机号，完善资料时必填
+username | String | 是 | 用户名
+password | String | 是 | 密码
+requirement | String | 否 | 用户符合条件，完善资料时必填
 
-### Campus
+### Gradient
 
-学校表
-
-字段 | 类型 | 必填 | 说明
-:--- | :---: | :---: | :---:
-objectId | String | 是 | 主键
-name | String | 是 | 学校名
-logoUrl | String | 是 | 学校 logo url
-
-### Game
-
-赛事表
+梯度表
 
 字段 | 类型 | 必填 | 说明
 :--- | :---: | :---: | :---:
 objectId | String | 是 | 主键
-name | String | 是 | 赛事名
-campusId | Pointer | 是 | 学校指针
-award | Number | 是 | 奖金池，默认为 0
-awardLimit | Number | 是 | 奖金池上限，0 代表无奖金池
-teams | Relation<Team> | 是 | 球队指针数组，默认为空
-college | String | 是 | 学院名
-isFinished | Bool | 是 | 是否结束，默认 false
-follows | Number<计数器> | 是 | 关注人数，默认 0
+projectId | Pointer | 是 | 对应的项目指针
+money | Number | 是 | 梯度对应融资量
+number | Number | 是 | 梯度预定的人数
+start | Date | 是 | 梯度筹集开始的时间
+end | Date | 是 | 梯度结束筹集的时间
 
-### GameFollow
+### Leader
 
-赛事关注表
+领头人表
 
 字段 | 类型 | 必填 | 说明
 :--- | :---: | :---: | :---:
 objectId | String | 是 | 主键
-gameId | Pointer | 是 | 赛事指针
+userId | Pointer | 是 | 领头人对应用户指针
+projectId | Pointer | 是 | 项目指针
+identify | String | 是 | 领头人身份
+sendword | String | 是 | 领头人寄语
+
+### Project
+
+项目表
+
+字段 | 类型 | 必填 | 说明
+:--- | :---: | :---: | :---:
+objectId | String | 是 | 主键
+name | String | 是 | 项目名称
+amount | Number | 是 | 项目融资目标金额
+start | Date | 是 | 项目融资开始时间
+end | Date | 是 | 项目融资结束时间
+
+### ProjectFollow
+
+跟投表
+
+字段 | 类型 | 必填 | 说明
+:--- | :---: | :---: | :---:
+objectId | String | 是 | 主键
+projectId | Pointer | 是 | 项目指针
+gradientId | Pointer | 是 | 梯度指针
 userId | Pointer | 是 | 用户指针
-
-### Competition
-
-比赛表
-
-字段 | 类型 | 必填 | 说明
-:--- | :---: | :---: | :---:
-objectId | String | 是 | 主键
-teamAId | Pointer | 是 | 球队A指针
-teamBId | Pointer | 是 | 球队B指针
-gameId | Pointer | 是 | 赛事指针
-reportId | Pointer | 否 | 战况指针
-status | String | 是 | "未开始" "进行中" "已完赛"
-award | Number | 是 | 奖金池，默认为 0
-awardLimit | Number | 是 | 奖金池上线，0 代表无奖金池
-scoreId | Pointer | 是 | 分数指针
-statics | String | 否 | 统计
-level | Number | 是 | 比赛层级
-type | String | 是 | 比赛类型 "小组赛" "A小组" "1/8 决赛" "1/4 决赛" "半决赛" "总决赛"
-
-### Score
-
-分数表
-
-字段 | 类型 | 必填 | 说明
-:--- | :---: | :---: | :---:
-objectId | String | 是 | 主键
-scoreA | Number | 是 | A 分数，默认 0
-scoreB | Number | 是 | B 分数，默认 0
-
-### Team
-
-球队表
-
-字段 | 类型 | 必填 | 说明
-:--- | :---: | :---: | :---:
-objectId | String | 是 | 主键
-name | String | 是 | 球队名
-logoUrl | String |　是 | 球队 Logo url
-info | String | 是 | 球队简介，默认空
-
-### Report
-
-报道表
-
-字段 | 类型 | 必填 | 说明
-:--- | :---: | :---: | :---:
-objectId | String | 是 | 主键
-title | String | 是 | 标题
-content | String | 是 | 内容
-
-### Comment
-
-评论表
-
-字段 | 类型 | 必填 | 说明
-:--- | :---: | :---: | :---:
-objectId | String | 是 | 主键
-userId | Pointer | 是 | 用户指针
-content | String | 是 | 评论内容，不为空
-likes | Number<计数器> | 是 | 赞数，默认为 0
-competitionId | Pointer | 是 | 比赛指针
-atUser | Pointer | 否 | 被 @ 的用户
-
-### CommentLike
-
-字段 | 类型 | 必填 | 说明
-:--- | :---: | :---: | :---:
-objectId | String | 是 | 主键
-commentId | Pointer | 是 | 评论指针
-userId | Pointer | 是 | 用户指针
+isLeader | Boolean | 是 | 是否为领头人，默认是false，是的话值为true
+isVerify | Boolean | 是 | 信息是否认证通过，默认是false，通过之后值为true
