@@ -153,3 +153,11 @@ atUser | Pointer | 否 | 被 @ 的用户
 objectId | String | 是 | 主键
 commentId | Pointer | 是 | 评论指针
 userId | Pointer | 是 | 用户指针
+
+### Admin
+字段 | 类型 | 必填 | 说明
+:--- | :---: | :---: | :---:
+objectId | String | 是 | 主键
+username | String | 是 | 用户名
+password | String | 是 | 密码
+campusId | Pointer | 是 | 学校指针
